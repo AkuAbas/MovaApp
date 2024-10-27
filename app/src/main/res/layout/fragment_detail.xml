@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.example.mova.model.DetailResponse" />
+
+        <variable
+            name="tvSeries"
+            type="com.example.mova.model.TvDetailsResponse" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_background_color"
+            tools:context=".presentation.ui.details.auth.detail.DetailFragment">
+
+            <ImageView
+                android:id="@+id/imageViewDetail"
+                loadImage="@{movie != null? movie.backdropPath : tvSeries.backdropPath}"
+                android:layout_width="0dp"
+                android:layout_height="320dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/cast"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDetailTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@{movie != null? movie.originalTitle : tvSeries.originalName}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/buttonAddToList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewDetail" />
+
+            <ToggleButton
+                android:id="@+id/buttonAddToList"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/list_icon_color_change"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintBottom_toBottomOf="@+id/textViewDetailTitle"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetailTitle" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/forward"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonAddToList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/buttonAddToList"
+                app:tint="@color/icon_color" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/halfstar"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetailTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailTitle" />
+
+            <ImageView
+                android:id="@+id/imageViewArrow"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDetailRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                app:IMDB="@{movie != null? movie.voteAverage : tvSeries.voteAverage}"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toTopOf="@+id/imageView10" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/arrow2"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewDetailRating"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetailRating"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetailRating" />
+
+            <TextView
+                android:id="@+id/textViewDetailRelease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@{movie != null? movie.releaseDate : tvSeries.releaseDate}"
+                android:textColor="@color/primary_textview_color"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/urbanist_semibold"
+                android:minWidth="0dp"
+                android:paddingHorizontal="10dp"
+                android:text="@{movie != null? movie.originalLanguage : tvSeries.originalLanguage}"
+                android:textColor="@color/red"
+                app:cornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewDetailRelease"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetailRelease"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetailRelease"
+                app:strokeColor="@color/red"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCompany"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_semibold"
+                android:maxLines="1"
+                android:minWidth="0dp"
+                android:paddingHorizontal="10dp"
+                android:text="@{movie != null? movie.productionCompanies[0].name : tvSeries.productionCompanies[0].name}"
+                android:textColor="@color/red"
+                app:cornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonLanguage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonLanguage"
+                app:layout_constraintTop_toTopOf="@+id/buttonLanguage"
+                app:strokeColor="@color/red"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDetailPlay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/red"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="@string/play_button"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/play"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDetailDownload"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDetailDownload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/urbanist_semibold"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="8dp"
+                android:text="@string/download_button"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/download"
+                app:iconGravity="textStart"
+                app:iconTint="@color/red"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonDetailPlay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonDetailPlay"
+                app:layout_constraintTop_toTopOf="@+id/buttonDetailPlay"
+                app:strokeColor="@color/red"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:id="@+id/textViewGenre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="@{movie != null? movie.genres[0].name : tvSeries.genres[0].name}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonDetailPlay" />
+
+            <TextView
+                android:id="@+id/textViewOverview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="@{movie != null? movie.overview : tvSeries.overview}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGenre" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvActors"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOverview" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvActors"
+                app:tabIndicatorColor="@color/red"
+                app:tabIndicatorFullWidth="true"
+                app:tabSelectedTextColor="@color/red"
+                app:tabTextColor="#616161">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more_like_this" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comments" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="32dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationViewActors"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rvActors"
+                app:layout_constraintEnd_toEndOf="@+id/rvActors"
+                app:layout_constraintStart_toStartOf="@+id/rvActors"
+                app:layout_constraintTop_toTopOf="@+id/rvActors"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/tabsViewPager"
+                android:layout_width="0dp"
+                android:layout_height="500dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationViewPager"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tabsViewPager"
+                app:layout_constraintStart_toStartOf="@+id/tabsViewPager"
+                app:layout_constraintTop_toTopOf="@+id/tabsViewPager"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+
+            <TextView
+                android:id="@+id/textViewActorsErrorMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@string/no_actors_available"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rvActors"
+                app:layout_constraintEnd_toEndOf="@+id/rvActors"
+                app:layout_constraintStart_toStartOf="@+id/rvActors"
+                app:layout_constraintTop_toTopOf="@+id/rvActors" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

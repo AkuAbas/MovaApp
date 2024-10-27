@@ -1,0 +1,14 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Mova" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="list_error_image_style">
+        <item name="android:src">@drawable/list_error_dark</item>
+    </style>
+
+    <style name="auth_logo_style">
+        <item name="android:src">@drawable/auth_logo_dark</item>
+    </style>
+</resources>

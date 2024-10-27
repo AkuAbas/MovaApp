@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    tools:context=".presentation.ui.auth.AuthFragment">
+
+    <ImageView
+        android:id="@+id/imageViewAuthLogo"
+        style="@style/auth_logo_style"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewArrow" />
+
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/icon_color" />
+
+    <TextView
+        android:id="@+id/textViewLetsYouIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/urbanist_bold"
+        android:text="@string/lets_you_in"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAuthLogo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFacebook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/input_background"
+        android:fontFamily="@font/urbanist_semibold"
+        android:paddingVertical="18dp"
+        android:text="@string/continue_with_facebook"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/facebookfigma"
+        app:iconGravity="textStart"
+        app:iconSize="24dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetsYouIn"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/input_background"
+        android:fontFamily="@font/urbanist_semibold"
+        android:paddingVertical="18dp"
+        android:text="@string/continue_with_google"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/google"
+        app:iconGravity="textStart"
+        app:iconSize="24dp"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFacebook"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonApple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/input_background"
+        android:fontFamily="@font/urbanist_semibold"
+        android:paddingVertical="18dp"
+        android:text="@string/continue_with_apple"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/apple"
+        app:iconGravity="textStart"
+        app:iconSize="24dp"
+        app:iconTint="@color/icon_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGoogle"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <ImageView
+        android:id="@+id/imageViewDivider1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewOr"
+        app:layout_constraintTop_toBottomOf="@+id/buttonApple"
+        app:tint="@color/divider_color" />
+
+    <ImageView
+        android:id="@+id/imageViewDivider2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/divider"
+        app:layout_constraintEnd_toStartOf="@+id/textViewOr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonApple"
+        app:tint="@color/divider_color" />
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/urbanist_semibold"
+        android:text="@string/or"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDivider1"
+        app:layout_constraintStart_toEndOf="@+id/imageViewDivider2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonApple" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAuthSignIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#E21221"
+        android:fontFamily="@font/urbanist_bold"
+        android:paddingVertical="18dp"
+        android:text="@string/sign_in_with_password"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOr" />
+
+    <TextView
+        android:id="@+id/textViewDont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/urbanist"
+        android:text="@string/dont_have_account"
+        android:textColor="@color/primary_textview_color"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAuthSignIn" />
+
+    <TextView
+        android:id="@+id/buttonAuthSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/urbanist_semibold"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="@string/sign_up"
+        android:textColor="#E21221"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDont"
+        app:layout_constraintStart_toEndOf="@+id/textViewDont"
+        app:layout_constraintTop_toTopOf="@+id/textViewDont" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    tools:context=".presentation.ui.details.auth.auth.RegisterFragment">
+
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/icon_color" />
+
+    <ImageView
+        android:id="@+id/imageViewMova"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/splashlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewArrow" />
+
+    <TextView
+        android:id="@+id/textViewCreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/urbanist_bold"
+        android:text="Create Your Account"
+        android:textAlignment="center"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMova" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCreate"
+        app:startIconDrawable="@drawable/baseline_email_24"
+        app:startIconTint="@color/icon_color_selector">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_input"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/primary_textview_color"
+            android:textColorHint="#9E9E9E" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:endIconMode="password_toggle"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputEmail"
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:startIconTint="@color/icon_color_selector">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EditTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_input"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:textColor="@color/primary_textview_color"
+            android:textColorHint="#9E9E9E" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxRemember"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/checkbox_background"
+        android:button="@null"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/InputPassword" />
+
+    <TextView
+        android:id="@+id/textViewRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/urbanist_semibold"
+        android:text="@string/remember_me"
+        android:textColor="@color/primary_textview_color"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxRemember"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxRemember"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxRemember" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#C1232F"
+        android:fontFamily="@font/urbanist_bold"
+        android:paddingVertical="18dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxRemember" />
+
+    <View
+        android:id="@+id/dividerLeft"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/divider_color"
+        app:layout_constraintEnd_toStartOf="@+id/textViewContinue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <View
+        android:id="@+id/dividerRight"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="34dp"
+        android:background="@color/divider_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewContinue"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/textViewContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/or_continue_with"
+        android:textColor="@color/primary_textview_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/dividerRight"
+        app:layout_constraintStart_toEndOf="@id/dividerLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        tools:layout_editor_absoluteX="155dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/input_background"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="18dp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/facebookfigma"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
+        app:iconTint="@null"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMediaButtons"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContinue"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/input_background"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="18dp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/google"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
+        app:iconTint="@null"
+        app:layout_constraintStart_toEndOf="@+id/buttonFacebook"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContinue"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonApple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/input_background"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="18dp"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/apple"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
+        app:iconTint="@color/icon_color"
+        app:layout_constraintStart_toEndOf="@+id/buttonGoogle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContinue"
+        app:strokeColor="@color/auth_button_border_color"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/textViewDont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/urbanist"
+        android:text="@string/already_have_account"
+        android:textColor="@color/primary_textview_color"
+        app:layout_constraintStart_toStartOf="@+id/guidelineAlreadyHave"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGoogle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineAlreadyHave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <TextView
+        android:id="@+id/buttonSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/urbanist_semibold"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="@string/sign_in"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDont"
+        app:layout_constraintStart_toEndOf="@+id/textViewDont"
+        app:layout_constraintTop_toTopOf="@+id/textViewDont" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewArrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMediaButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

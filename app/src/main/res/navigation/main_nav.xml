@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mova.presentation.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.mova.presentation.ui.splash.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.mova.presentation.ui.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mova.presentation.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.mova.presentation.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_fillProfileFragment"
+            app:destination="@id/fillProfileFragment"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mova.presentation.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllFragment"
+            app:destination="@id/viewAllFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllFragment"
+        android:name="com.example.mova.presentation.ui.home.ViewAllFragment"
+        android:label="fragment_view_all"
+        tools:layout="@layout/fragment_view_all">
+        <action
+            android:id="@+id/action_viewAllFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="movies"
+            app:argType="com.example.mova.model.Movie[]" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAllFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.mova.presentation.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification">
+        <action
+            android:id="@+id/action_notificationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mova.presentation.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="test"
+            app:argType="string" />
+        <argument
+            android:name="isMovie"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.mova.presentation.ui.explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_exploreFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.mova.presentation.ui.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mova.presentation.ui.profile.myProfile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileNotificationFragment"
+            app:destination="@id/profileNotificationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_authFragment"
+            app:destination="@id/authFragment"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.mova.presentation.ui.profile.editProfile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/editProfileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fillProfileFragment"
+        android:name="com.example.mova.presentation.ui.profile.fillProfile.FillProfileFragment"
+        android:label="fragment_fill_profile"
+        tools:layout="@layout/fragment_fill_profile">
+        <action
+            android:id="@+id/action_fillProfileFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/fillProfileFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fillProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileNotificationFragment"
+        android:name="com.example.mova.presentation.ui.profile.myProfile.ProfileNotificationFragment"
+        android:label="fragment_profile_notification"
+        tools:layout="@layout/fragment_profile_notification">
+        <action
+            android:id="@+id/action_profileNotificationFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileNotificationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.mova.presentation.ui.profile.help.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help">
+        <action
+            android:id="@+id/action_helpFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/helpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.example.mova.presentation.ui.profile.privacy.PrivacyFragment"
+        android:label="fragment_privacy"
+        tools:layout="@layout/fragment_privacy">
+        <action
+            android:id="@+id/action_privacyFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/privacyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

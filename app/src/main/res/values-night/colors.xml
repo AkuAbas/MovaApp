@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_background_color">#181A20</color>
+    <color name="primary_textview_color">#FFFFFFFF</color>
+    <color name="icon_color">#FFFFFFFF</color>
+    <color name="input_background">#1F222A</color>
+    <color name="privacy_textview_color">#E0E0E0</color>
+    <color name="actor_position_textview_color">#E0E0E0</color>
+    <color name="searchbar_hint_color">#757575</color>
+    <color name="filter_button_color">#281920</color>
+    <color name="auth_button_border_color">#1F222A</color>
+    <color name="divider_color">#35383F</color>
+    <color name="bottom_menu_background_color">#E6131313</color>
+    <color name="alert_negative_button_color">#35383F</color>
+    <color name="alert_negative_text_color">#FFFFFFFF</color>
+</resources>

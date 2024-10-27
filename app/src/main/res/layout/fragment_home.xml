@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.example.mova.model.Movie" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_background_color"
+            android:paddingBottom="95dp"
+            tools:context=".presentation.ui.details.auth.home.HomeFragment">
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerHome"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/home_main"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.43" />
+
+            <TextView
+                android:id="@+id/textViewTop10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@string/top_10_movies"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewPagerHome" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSeeAllPopular"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@string/see_all"
+                android:textColor="#E21221"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTop10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewTop10" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTop10"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSeeAllPopular" />
+
+            <TextView
+                android:id="@+id/textViewNewReleases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@string/new_releases"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvTop10" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSeeAllUpcoming"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@string/see_all"
+                android:textColor="#E21221"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNewReleases"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewNewReleases" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNewReleases"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSeeAllUpcoming" />
+
+            <ProgressBar
+                android:id="@+id/progressBarTop10"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="#ee12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rvTop10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rvTop10" />
+
+            <ProgressBar
+                android:id="@+id/progressBarNew"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="#ee12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rvNewReleases"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rvNewReleases" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

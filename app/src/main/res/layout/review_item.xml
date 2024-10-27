@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="review"
+            type="com.example.mova.model.Review" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/reviewCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewUser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{review.authorDetails.avatarPath}" />
+
+            <TextView
+                android:id="@+id/textViewUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@{review.authorDetails.username}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="26dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewUser"
+                app:srcCompat="@drawable/group3"
+                app:tint="@color/icon_color" />
+
+            <TextView
+                android:id="@+id/textViewComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist"
+                android:text="@{review.content}"
+                android:textColor="@color/primary_textview_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewUser" />
+
+            <ImageView
+                android:id="@+id/imageViewHeart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewComment"
+                app:srcCompat="@drawable/heart" />
+
+            <TextView
+                android:id="@+id/textViewLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@{review.authorDetails.rating.toString()}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewHeart"
+                app:layout_constraintStart_toEndOf="@+id/imageViewHeart"
+                app:layout_constraintTop_toTopOf="@+id/imageViewHeart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

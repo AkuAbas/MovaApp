@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="notification"
+            type="com.example.mova.model.Notification" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewNotif"
+                loadImage="@{notification.image}"
+                android:layout_width="140dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imageViewNotifPlay"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewNotif"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewNotif"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewNotif"
+                app:srcCompat="@drawable/play" />
+
+            <TextView
+                android:id="@+id/textViewNotifTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@{notification.title}"
+                android:textColor="@color/primary_textview_color"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textViewDate"
+                app:layout_constraintStart_toEndOf="@+id/imageViewNotif"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewEpisode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:text="@{notification.episode}"
+                android:textColor="@color/primary_textview_color"
+                app:layout_constraintStart_toEndOf="@+id/imageViewNotif"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNotifTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonUpdate"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="70dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/filter_button_color"
+                android:text="@string/update"
+                android:textColor="@color/red"
+                app:cornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewNotif"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEpisode" />
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist"
+                android:text="@{notification.date}"
+                android:textColor="@color/searchbar_hint_color"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNotifTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewNotifTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

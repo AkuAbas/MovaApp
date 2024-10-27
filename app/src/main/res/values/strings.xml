@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Mova</string>
+    <string name="welcome_description">The best movie streaming app of the century to make your days great!</string>
+    <string name="welcome_to_mova">"Welcome to Mova"</string>
+    <string name="get_started">"Get Started"</string>
+
+    <string name="lets_you_in">Let’s you in</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_apple">Continue with Apple</string>
+    <string name="or">or</string>
+    <string name="sign_in_with_password">Sign in with password</string>
+    <string name="dont_have_account">Don’t have an account?</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="login_title">Login to Your Account</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot the password?</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="already_have_account">Already have an account?</string>
+
+    <string name="fill_profile_title">Fill Your Profile</string>
+    <string name="select_image">Select Image</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_nickname">Nickname</string>
+    <string name="skip_button">Skip</string>
+    <string name="continue_button">Continue</string>
+
+    <string name="top_10_movies">Top 10 Movies This Week</string>
+    <string name="see_all">See all</string>
+    <string name="new_releases">New Releases</string>
+
+    <string name="play_button">Play</string>
+    <string name="download_button">Download</string>
+    <string name="more_like_this">More Like This</string>
+    <string name="comments">Comments</string>
+    <string name="no_actors_available">No actors available at this time.</string>
+    <string name="notification">Notification</string>
+    <string name="search">Search</string>
+    <string name="movies">Movies</string>
+    <string name="tv_series">Tv Series</string>
+    <string name="my_list">My List</string>
+    <string name="list_is_empty">Your List is Empty</string>
+
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="help_center">Help Center</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="what_is_mova">Mova is a platform where users can explore and discover both movies and TV series in detail, while also allowing them to create and manage their own personalized content lists.</string>
+    <string name="how_to_delete_content">To delete a movie or TV series from the list, simply tap on the item in the list screen. A confirmation window will appear; click "Yes" to confirm the deletion.</string>
+    <string name="how_to_add_content">To add content to the list, simply click on the "list" icon in the content details screen.</string>
+    <string name="how_to_change_user_info">You can change your user information by clicking on "Edit Profile" in the Profile section.</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</string>
+    <string name="privacy_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+
+    <string name="imdb_rating">IMDB Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="genre">Genre</string>
+    <string name="overview">Overview</string>
+    <string name="production_company">Production Company</string>
+    <string name="original_language">Original Language</string>
+    <string name="cast">Cast</string>
+    <string name="add_to_list">Add to List</string>
+    <string name="remove_from_list">Remove from List</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_description">Sorry, the keyword you entered could not be found. Try to check again or search with other keywords.</string>
+    <string name="movie_not_found">No related movie suggestions at the moment</string>
+    <string name="no_reviews">No reviews yet. Check back later!</string>
+    <string name="list_error_message">It seems that you haven\'t added any movies to the list</string>
+    <string name="delete_from_list">Are you sure you want to delete this content?</string>
+    <string name="not_in_list">The content you\'re searching for is not in your list.</string>
+    <string name="choose_country">Choose country</string>
+    <string name="update">Update</string>
+    <string name="general_notification">General Notification</string>
+    <string name="new_arrival">New Arrival</string>
+    <string name="app_updates">App Updates</string>
+    <string name="subscription">Subscription</string>
+    <string name="faq">FAQ</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="types_of_data_we_collect">1. Types of Data We Collect</string>
+    <string name="use_of_your_personal_data">2. Use of Your Personal Data</string>
+    <string name="disclosure_of_your_personal_data">3. Disclosure of Your Personal Data</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+
+    <string-array name="countries_array">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>United Kingdom</item>
+        <item>Germany</item>
+        <item>France</item>
+        <item>Australia</item>
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>Japan</item>
+        <item>Brazil</item>
+    </string-array>
+
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+
+</resources>
